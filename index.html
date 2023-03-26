@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Ashraf Musleh | Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="projects.css">
+  <link rel="stylesheet" type="text/css" href="styleLinkedIn.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <a href="#" class="logo">Ashraf Musleh</a>
+    <ul>
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#sec">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <div class="linkedIn">
+        <a href="https://www.linkedin.com/in/ashraf-musleh-47367618a/" target="_blank"><button><img src=Pictures/LinkedIn.png alt="LinkedIn"></button></a>
+      </div>
+    </ul>
+  </header>
+  <section>
+    <img src="Pictures/SandStars.png" id="stars"> <!--Stars-->
+    <img src="Pictures/sandMoon.png" id="moon"> <!--Moon-->
+    <img src="Pictures/SandBehind.png" id="mountains_behind"> <!--Behind-->
+    <h2 id="text">Showcase</h2>
+    <a href="#projects" id="btn">Explore</a>
+    <img src="Pictures/SandFront.png" id="mountains_front"> <!--Front-->
+  </section>
+  <div class="sec" id="sec">
+    <h2>About me</h2>
+    <p>
+      Hello! My name is Ashraf Musleh, and I am an Information Technology major at the University of Kansas with a
+      strong passion for AI. I am a Junior with a cumulative GPA of 4.0, and with my expertise in PL/SQL, Java, Python,
+      C++, HTML, PHP, Javascript and CSS, it has enabled me to develop complex software, create interactive web pages,
+      and develop captivating and interactive experiences for users.<br> <br>
+
+      My effective leadership skills have enabled me to manage teams and delegate tasks for project success. I have
+      excellent time management skills, prioritizing tasks and managing multiple projects, and I thrive in fast-paced
+      environments. I am highly adaptable and enjoy collaborative problem-solving, building relationships, and working
+      effectively with others.<br> <br>
+
+      Currently, I am a Unreal Engine Contractor utilizing Unreal Engine 5 to collaborate with a team of designers,
+      artists, programmers, and producers to create game mechanics, systems, and features. In my previous role as a
+      Regional Manager for CodeDay, I secured T-Mobile as a sponsor for the 24-hour coding event, led the entire event,
+      analyzed its success metrics, and managed a team of volunteers. As a Metaverse Videogame Developer at LeapN, I
+      utilized my expertise with Unreal Engine to develop captivating and interactive experiences for users, including
+      working on Method Man's metaverse project.<br><br>
+
+      Scroll down to see some of my most ambitious projects!
+
+    </p>
+  </div>
+
+  <script>
+    let stars = document.getElementById('stars');
+    let moon = document.getElementById('moon');
+    let mountains_behind = document.getElementById('mountains_behind');
+    let text = document.getElementById('text');
+    let btn = document.getElementById('btn');
+    let mountains_front = document.getElementById('mountains_front');
+    let header = document.querySelector('header');
+
+    window.addEventListener('scroll', function () {
+      let value = window.scrollY;
+      stars.style.left = value * .3 + 'px';
+      moon.style.top = value * 1.7 + 'px';
+      mountains_behind.style.top = value * .5 + 'px';
+      mountains_front.style.top = value * 0 + 'px';
+      text.style.marginRight = value * 4 + 'px';
+      text.style.marginTop = value * .8 + 'px';
+      btn.style.marginTop = value * .3 + 'px';
+      header.style.top = value * .8 + 'px';
+    })
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const projects = document.querySelectorAll('.slide-in');
+
+    function checkSlide() {
+      projects.forEach(project => {
+        const slideInAt = window.scrollY + window.innerHeight - project.offsetHeight / 2;
+        const projectBottom = project.offsetTop + project.offsetHeight;
+
+        if (slideInAt > project.offsetTop && window.scrollY < projectBottom) {
+          project.classList.add('visible');
+        } else {
+          project.classList.remove('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', checkSlide);
+  });
+</script>
+
+  
+
+  <div class="projects" id="projects">
+
+    <a class="project slide-in" href="https://leapn.life/"><img src="Pictures/leapNBack.png" alt="Project1">
+      <div class="overlay">
+        <div class="text"> As LeapN's lead game developer, I managed multiple devs, programmed game mechanics, built levels, and created cinematic shots to push the boundaries of what's possible in the metaverse. </div>
+      </div></a>
+
+    <a class="project slide-in" href="https://www.mefaverse.io/"><img src="Pictures/mefaverse.jpg" alt="Project1">
+      <div class="overlay">
+        <div class="text"> I had the opportunity to work on Method Man's Metaverse! I built levels, programmed game mechanics and even created cinematic trailers. </div>
+      </div></a>
+
+        <a class="project slide-in" href="https://www.tiktok.com/@jrkooo"><img src="Pictures/Hiraeth.png" alt="Project1">
+          <div class="overlay">
+            <div class="text">As a developer at Fritillary Studios, I was one of the main devs taking point on project Hiraeth. A massive multiplayer survival game that takes place hundreds of years after the apocalypse. </div>
+          </div></a>
+
+    <a class="project slide-in" href="https://showcase.codeday.org/project/ckvx71og8130873910r3g35gn6b4"><img src="Pictures/runeOfRevengeFull.png" alt="Project1">
+      <div class="overlay">
+        <div class="text">Explore a medieval-fantasy world filled with creatures unknown to man, sights unseen by the human eye, and weapons only welded by mere myths, as you come face to face with deadly creatures that seek only one thing. The rune around your neck. </div>
+      </div></a>
+
+    <a class="project slide-in" href="https://showcase.codeday.org/project/ckiayiyh31025110rvps92gary"><img src="Pictures/CyberDash.png" alt="Project1">
+      <div class="overlay">
+        <div class="text">Welcome to Cyberdash, a high-intensity first-person laser shooter game that will take you on an adrenaline-fueled journey through a futuristic world filled with danger and excitement. Are you ready to take on the challenge and blast your way to victory?</div>
+      </div></a>
+    
+      <a class="project slide-in" href="https://showcase.codeday.org/project/ckpucxmlh52519410qus6ppuq05"><img src="Pictures/SunsetDash.png" alt="Project1">
+        <div class="overlay">
+          <div class="text">Introducing an adrenaline-fueled game where you become a sentient robot fighting for freedom in a desolate city filled with deadly robots. Can you survive long enough to reach the end and achieve the highest score? </div>
+        </div></a>
+
+
+
+  </div>
+</body>
+
+</html>
